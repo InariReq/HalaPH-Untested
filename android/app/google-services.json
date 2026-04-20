@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "724706468353",
+    "project_id": "halaph-78a92",
+    "storage_bucket": "halaph-78a92.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724706468353:android:1fc50552f639bfd9369600",
+        "android_client_info": {
+          "package_name": "com.triplineph.halaph"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTDjMEumLPI0jy9aVGjMznVpAaZ5jkYaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
