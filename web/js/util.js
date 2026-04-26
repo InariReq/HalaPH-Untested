@@ -129,30 +129,35 @@ function decodePoints(n) {
 function viewMode(input, latlng) {
 
   var body = document.body;
+  if (!body) return;
 
+  // Ensure class toggling is robust using classList
   if (input === "map") {
-    if (body.className === "") {
-      body.className = "mapmode";
+    if (body.classList.length === 0) {
+      body.classList.add("mapmode");
     }
   }
 
   if (input === "home") {
-    if (body.className === "mapmode") {
-      body.className = "";
+    if (body.classList.contains("mapmode")) {
+      body.classList.remove("mapmode");
     }
   }
 
   if (input === "toggle") {
-    if (body.className === "") {
-      body.className = "mapmode";
+    if (body.classList.contains("mapmode")) {
+      body.classList.remove("mapmode");
     } else {
-      body.className = "";
+      body.classList.add("mapmode");
     }
   }
 
-  if(body.className == "mapmode") {
-    window.setTimeout(refitMap, 340);
-    window.setTimeout(refitMap, 810);
+  if(body.classList.contains("mapmode")) {
+    // Guard against map not being initialized yet
+    if (typeof map !== 'undefined' && map && typeof map.invalidateSize === 'function') {
+      window.setTimeout(function(){ map.invalidateSize(); }, 340);
+      window.setTimeout(function(){ map.invalidateSize(); }, 810);
+    }
   }
 
 }
